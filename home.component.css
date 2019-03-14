@@ -1,0 +1,111 @@
+
+.selected {
+  background-color: #f7e994 !important;
+  color: white;
+}
+
+.food {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 8em;
+  font-size:1.2em;
+}
+
+  .food li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+
+    .food li.selected:hover {
+      background-color: #f7e994 !important;
+      color: white;
+    }
+
+    .food li:hover {
+      color: #607D8B;
+      background-color: #DDD;
+      left: .1em;
+    }
+
+  .food .text {
+    position: relative;
+    top: -3px;
+  }
+
+.food .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #f3bc0f;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+  width: 60px;
+}
+
+btn-group {
+  float: left;
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 20%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.wrap {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 600px;
+  margin: 0 auto;
+  box-shadow: 3px 3px 3px 3px #ccc;
+  padding: 50px;
+}
+  .wrap span {
+    padding: 5px;
+    color: #279227;
+  }
+input, select {
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+}
+button {
+  background:#279227;
+  color:#fff;
+  padding:10px 40px;
+  margin:20px 5px;
+  border:0;
+  outline:0;
+  cursor:pointer;
+}
+h4, .suppliments p span {
+  color: #279227;
+}
+h4 {
+  font-size:20px;
+}
+.suppliments p{
+  background:#f6fbf3;
+  padding:5px;
+}
+.btn-group h3 {
+  margin: 40px 0 0 5px;
+  font-size: 20px;
+}
+.selectedfood1 p span {
+  padding: 5px;
+  color: #279227;
+}

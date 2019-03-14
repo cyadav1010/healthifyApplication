@@ -1,0 +1,68 @@
+<div *ngIf="InputPage" class="wrap">
+  <span>Help us Know you Better</span>
+  <!--<label for="number">Weight: (kg)</label><br />-->
+  <p>Weight: (kg)</p>
+  <input type="number" name="Weight" [(ngModel)]="inputData.weight" /><br />
+  <!--<label for="number">Height:(ft/inch) </label><br />-->
+  <p>Height:(ft/inch) </p>
+  <input type="number" name="Height" [(ngModel)]="inputData.height" /><br />
+  <p>Your Age</p>
+  <input type="number" name="Height" [(ngModel)]="inputData.age" /><br />
+  <p> select sex</p>
+  <select [(ngModel)]="sexSelected">
+    <option *ngFor='let sex of sex' [value]="sex.name">{{sex.name}}</option>
+  </select><br>
+  <p>Select your Daily Activity</p>
+  <select [(ngModel)]="dailyActivitySelected">
+    <option *ngFor="let activity of dailyActivity" [value]="activity.activityName">{{activity.activityName}}</option>
+  </select><br>
+
+  <button type="button" (click)="onclick()">Submit</button>
+</div>
+<div class="wrap" *ngIf="dataPageInfo">
+  <div *ngIf="Info" class="suppliments">
+    <h4>You need daily supplement approx </h4>
+    <p> calories <span>{{supplement.calories}}</span></p>
+    <p> carbs  <span>{{supplement.carbs}}</span> grams</p>
+    <p> protein  <span>{{supplement.protein}}</span> grams</p>
+  </div>
+  <div class="btn-group" *ngIf="mealType">
+    <h3>Add your meals</h3>
+    <button type="button" (click)="addMeal('breakfast')">Breakfast</button>
+    <button type="button" (click)="addMeal('luch')">Lunch</button>
+    <button type="button" (click)="addMeal('dinner')">Dinner</button>
+  </div>
+  <div *ngIf="addFoodPage">
+    <ul class="food">
+      <li *ngFor="let food of foodList1"
+          [class.selected]="food === selectedFood"
+          (click)="onSelectFood(food)">
+        <span class="badge">{{food.name}}</span> add
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="selectedFood" class="selectedfood1">
+    <h4>per serve {{selectedFood.name | uppercase}} contain </h4>
+    <!--<div><span>enter quantity: </span>{{selectedFood.quantity}}</div>-->
+    <div>
+      <p>protein:  <span>{{selectedFood.protein}}</span></p>
+      <p>carbs: <span>{{selectedFood.carbs}}</span></p>
+      <p>calories: <span>{{selectedFood.calories}}</span></p>
+      <label>
+        enter quantity:
+        <input [(ngModel)]="selectedFood.quantity" placeholder="number" /><br>
+        <button type="button" (click)="updateSupplement(selectedFood)">Add</button>
+      </label>
+    </div>
+
+  </div>
+  <div *ngIf="supplementNeededPage" class="suppliments">
+    <h4>To be fit you need more </h4>
+    <p> calories {{supplementNeeded.calories}}</p>
+    <p> carbs  {{supplementNeeded.carbs}} grams</p>
+    <p> protein  {{supplementNeeded.protein}} grams</p>
+  </div>
+</div>
+
+
